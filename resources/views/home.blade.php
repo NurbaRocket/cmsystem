@@ -15,7 +15,9 @@
                     @endif
 
                         <a href="/public/posts/create" class="btn btn-primary"> Create Post</a>
-                    <h3>Your blogpost</h3>
+                        <hr>
+                    <h4>Your blogpost</h4>
+
                         @if(count($posts) > 0)
                             <table class="table table-striped">
                                 <tr>
@@ -35,7 +37,7 @@
                                 @endforeach
                             </table>
                         @else
-                            <p>No post found</p>
+                            <h1 class="alert alert-warning">No post found</h1>
                         @endif
 
                 </div>

@@ -1,0 +1,11 @@
+/*.container,*/
+/*.fullpageimage{*/
+/*    width: 200px;*/
+/*    height: 300px;*/
+/*    object-fit: cover;*/
+/*}*/
+
+.card.w-100
+{
+    /*object-fit: fill;*/
+}

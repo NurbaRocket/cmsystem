@@ -19,6 +19,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/public/posts">Posts</a>
                 </li>
+{{--                <li class="nav-item">--}}
+{{--                    <a class="nav-link" href="/public/index2">Работники</a>--}}
+{{--                </li>--}}
             </ul>
 
             <!-- Right Side Of Navbar -->

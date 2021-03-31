@@ -55,11 +55,29 @@ class PostsController extends Controller {
         else{
             $filenameToStore = 'no_image.jpg';
         }
+
+        if($request->hasFile('pdfdocs')){
+            $filenameWithExt2 = $request->file('pdfdocs')->getClientOriginalName();
+            $filename2 = pathinfo($filenameWithExt2, PATHINFO_FILENAME);
+            $extension = $request->file('pdfdocs')->getClientOriginalExtension();
+            $filenameToStore2 = $filename2.'_'.time().'.'.$extension;
+            $path = $request->file('pdfdocs')->storeAs('public/pdfdocs', $filenameToStore2);
+        }
+        else{
+            $filenameToStore2 = 'no_pdf.pdf';
+        }
+
         $post = new Post();
         $post->title = $request->input('title');
         $post->body = $request->input('body');
+        $post->name = $request->input('name');
+        $post->surname = $request->input('surname');
+        $post->patronymic = $request->input('patronymic');
+        $post->phnumber = $request->input('phnumber');
+        $post->ppnumber = $request->input('ppnumber');
         $post->user_id = Auth::id();
         $post->cover_image = $filenameToStore;
+        $post->pdfdocs = $filenameToStore2;
         $post->save();
         return redirect('posts')->with('success', 'Post successfully created');
     }
